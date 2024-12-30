@@ -42,6 +42,7 @@ bash
 Copiar código
 git clone https://github.com/seu-usuario/mnist_app.git
 cd mnist_app
+
 Crie um ambiente virtual:
 
 bash
@@ -53,6 +54,7 @@ Windows:
 cmd
 Copiar código
 .\venv\Scripts\activate
+
 Linux/MacOS:
 bash
 Copiar código
