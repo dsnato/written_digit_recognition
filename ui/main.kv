@@ -1,0 +1,27 @@
+BoxLayout:
+    orientation: 'vertical'
+    spacing: 10
+    padding: 10
+
+    Label:
+        text: 'Desenhe um número abaixo:'
+        font_size: '20sp'
+
+    Widget:
+        id: drawing_area
+        canvas:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Button:
+        text: 'Classificar'
+        font_size: '20sp'
+        on_press: app.classify_image()
+
+    Label:
+        id: result_label
+        text: 'Resultado: '
+        font_size: '20sp'
