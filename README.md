@@ -1,48 +1,124 @@
-# written_digit_recognition
-Título do Projeto: Reconhecimento de Dígitos Escritos à Mão usando Inteligência Artificial e uma Interface Gráfica com Kivy.
+🚀 Reconhecimento de Dígitos Manuscritos com Kivy e TensorFlow
+Este projeto utiliza Kivy para a interface gráfica e TensorFlow/Keras para reconhecimento de dígitos manuscritos usando um modelo treinado no dataset MNIST.
 
-Objetivo:
+📚 Índice
+Pré-requisitos
+Estrutura do Projeto
+Instalação
+Treinamento do Modelo
+Execução do Aplicativo
+Como Usar
+Possíveis Erros e Soluções
 
-Criar um aplicativo simples em Python e Kivy que:
-	1.	Utiliza Machine Learning (Deep Learning) para reconhecer dígitos manuscritos.
-	2.	Integra uma interface gráfica em Kivy para o usuário desenhar um dígito (0-9) e visualizar o resultado.
+✅ 1. Pré-requisitos
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-Tecnologias e Bibliotecas:
-	1.	Python (linguagem principal).
-	2.	Kivy (para a interface gráfica).
-	3.	TensorFlow/Keras (para o modelo de Machine Learning pré-treinado).
-	4.	NumPy e Pillow (para manipulação da imagem desenhada).
-	5.	MNIST Dataset (banco de dados de dígitos manuscritos).
+Python 3.8 ou superior
+Pip (gerenciador de pacotes do Python)
+PyCharm (opcional, mas recomendado)
 
-Funcionamento:
-	1.	A interface Kivy terá uma área para desenhar o dígito e um botão “Classificar”.
-	2.	Quando o usuário desenhar o dígito e clicar em “Classificar”:
-	•	A imagem desenhada será capturada e processada.
-	•	Um modelo de Deep Learning previamente treinado (baseado no dataset MNIST) irá prever o dígito.
-	•	O resultado (por exemplo, “Dígito Reconhecido: 3”) será exibido na tela.
-	3.	O modelo de Deep Learning será carregado de forma simples e estará pronto para uso.
+📂 2. Estrutura do Projeto
 
-Etapas de Implementação:
-	1.	Preparação do modelo de Machine Learning:
-	•	Treinar ou carregar um modelo simples de classificação de imagens baseado no MNIST.
-	•	Utilizar TensorFlow/Keras para criar e salvar o modelo em um arquivo .h5 (modelo treinado).
-	2.	Criação da interface gráfica com Kivy:
-	•	Desenvolver uma interface básica com uma área para desenhar (Canvas do Kivy).
-	•	Adicionar um botão para classificar a imagem.
-	•	Mostrar o resultado na tela.
-	3.	Processamento da imagem:
-	•	Converter o desenho feito no Kivy em uma imagem de 28x28 pixels (formato exigido pelo modelo MNIST).
-	•	Transformar a imagem em um array NumPy para alimentar o modelo de Machine Learning.
-	4.	Integração do modelo e interface:
-	•	Carregar o modelo pré-treinado no Kivy e use-o para fazer previsões.
+bash
+Copiar código
+mnist_app/
+├── main.py                # Arquivo principal do aplicativo Kivy
+├── train_and_save_model.py # Script para treinar e salvar o modelo MNIST
+├── model/
+│   ├── mnist_model.h5     # Modelo treinado salvo (será gerado)
+├── assets/
+│   ├── test_images/       # Imagens temporárias salvas pelo app
+├── ui/
+│   ├── main.kv            # Interface do aplicativo
+├── utils/
+│   ├── image_processing.py # Pré-processamento das imagens
+│   ├── model_loader.py     # Carregamento do modelo
+└── README.md              # Documentação do projeto
 
-Resultado Esperado:
-	•	Uma janela será aberta com uma área para desenhar.
-	•	Ao desenhar um número de 0 a 9 e clicar no botão “Classificar”, o sistema mostrará o dígito reconhecido.
+⚙️ 3. Instalação
+Clone o repositório:
 
-Entrega Final:
+bash
+Copiar código
+git clone https://github.com/seu-usuario/mnist_app.git
+cd mnist_app
+Crie um ambiente virtual:
 
-O projeto será apresentado com:
-	1.	O código-fonte do aplicativo.
-	2.	Prints da interface funcionando.
-	3.	Explicação do modelo e do funcionamento geral.
+bash
+Copiar código
+python -m venv venv
+Ative o ambiente virtual:
+
+Windows:
+cmd
+Copiar código
+.\venv\Scripts\activate
+Linux/MacOS:
+bash
+Copiar código
+source venv/bin/activate
+Instale as dependências necessárias:
+
+bash
+Copiar código
+pip install kivy tensorflow pillow numpy
+
+🧠 4. Treinamento do Modelo
+Se você ainda não tiver o arquivo mnist_model.h5, execute o script de treinamento:
+
+bash
+Copiar código
+python train_and_save_model.py
+Isso vai:
+Treinar um modelo simples com o dataset MNIST.
+Salvar o modelo em: model/mnist_model.h5.
+
+▶️ 5. Execução do Aplicativo
+Após garantir que o modelo está disponível, execute o aplicativo com:
+
+bash
+Copiar código
+python main.py
+Se tudo estiver correto, uma interface gráfica abrirá para interação.
+
+🖥️ 6. Como Usar
+Abra o aplicativo.
+Desenhe um número (0-9) na área branca.
+Clique no botão "Classificar".
+O número desenhado será reconhecido e exibido na tela com a confiança da predição.
+Clique em "Limpar" para desenhar novamente.
+
+🛡️ 7. Possíveis Erros e Soluções
+
+❗ Erro: Arquivo mnist_model.h5 não encontrado
+Causa: O modelo não foi treinado ou não está na pasta correta.
+Solução: Execute:
+bash
+Copiar código
+python train_and_save_model.py
+❗ Erro: Módulo kivy ou tensorflow não encontrado
+Causa: As bibliotecas não foram instaladas corretamente.
+Solução: Execute:
+bash
+Copiar código
+pip install kivy tensorflow pillow numpy
+❗ Erro: Permissão negada ao acessar mnist_model.h5
+Causa: Permissões incorretas no arquivo.
+Solução:
+Clique com o botão direito no arquivo mnist_model.h5.
+Vá para Propriedades > Segurança.
+Certifique-se de que seu usuário tem Leitura e Execução.
+
+💡 8. Melhorias Futuras
+Adicionar suporte para mais tipos de imagens.
+Melhorar a interface gráfica.
+Permitir salvar os resultados em um arquivo de texto.
+
+🤝 9. Contribuição
+Sinta-se à vontade para contribuir com melhorias, correções ou novas funcionalidades! Basta abrir uma Pull Request.
+
+📄 10. Licença
+Este projeto é licenciado sob a MIT License.
+
+Feito com ❤️ por Renato Samico
+Se precisar de ajuda, entre em contato! 🚀
