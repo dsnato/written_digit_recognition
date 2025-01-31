@@ -1,26 +1,31 @@
-🚀 Reconhecimento de Dígitos Manuscritos com Kivy e TensorFlow
-Este projeto utiliza Kivy para a interface gráfica e TensorFlow/Keras para reconhecimento de dígitos manuscritos usando um modelo treinado no dataset MNIST.
+# 🚀 Reconhecimento de Dígitos Manuscritos com Kivy e TensorFlow
 
-📚 Índice
-Pré-requisitos
-Estrutura do Projeto
-Instalação
-Treinamento do Modelo
-Execução do Aplicativo
-Como Usar
-Possíveis Erros e Soluções
+Este projeto utiliza **Kivy** para a interface gráfica e **TensorFlow/Keras** para reconhecimento de dígitos manuscritos usando um modelo treinado no dataset **MNIST**.
 
-✅ 1. Pré-requisitos
+⚠️ **Status do Projeto**: Em desenvolvimento 🚧
+Este projeto ainda está sendo finalizado. Algumas funcionalidades podem estar incompletas ou sujeitas a alterações.
+
+## 📚 Índice
+- [Pré-requisitos](#-1-pré-requisitos)
+- [Estrutura do Projeto](#-2-estrutura-do-projeto)
+- [Instalação](#-3-instalação)
+- [Treinamento do Modelo](#-4-treinamento-do-modelo)
+- [Execução do Aplicativo](#-5-execução-do-aplicativo)
+- [Como Usar](#-6-como-usar)
+- [Possíveis Erros e Soluções](#-7-possíveis-erros-e-soluções)
+- [Melhorias Futuras](#-8-melhorias-futuras)
+- [Contribuição](#-9-contribuição)
+- [Licença](#-10-licença)
+
+## ✅ 1. Pré-requisitos
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-Python 3.8 ou superior
-Pip (gerenciador de pacotes do Python)
-PyCharm (opcional, mas recomendado)
+- Python **3.8** ou superior
+- Pip (gerenciador de pacotes do Python)
+- PyCharm (opcional, mas recomendado)
 
-📂 2. Estrutura do Projeto
-
-bash
-Copiar código
+## 📂 2. Estrutura do Projeto
+```
 mnist_app/
 ├── main.py                # Arquivo principal do aplicativo Kivy
 ├── train_and_save_model.py # Script para treinar e salvar o modelo MNIST
@@ -34,93 +39,95 @@ mnist_app/
 │   ├── image_processing.py # Pré-processamento das imagens
 │   ├── model_loader.py     # Carregamento do modelo
 └── README.md              # Documentação do projeto
+```
 
-⚙️ 3. Instalação
+## ⚙️ 3. Instalação
+
 Clone o repositório:
-
-bash
-Copiar código
+```bash
 git clone https://github.com/seu-usuario/mnist_app.git
 cd mnist_app
+```
 
 Crie um ambiente virtual:
-
-bash
-Copiar código
+```bash
 python -m venv venv
+```
+
 Ative o ambiente virtual:
+- **Windows:**
+  ```cmd
+  .\venv\Scripts\activate
+  ```
+- **Linux/MacOS:**
+  ```bash
+  source venv/bin/activate
+  ```
 
-Windows:
-cmd
-Copiar código
-.\venv\Scripts\activate
-
-Linux/MacOS:
-bash
-Copiar código
-source venv/bin/activate
-Instale as dependências necessárias:
-
-bash
-Copiar código
+Instale as dependências:
+```bash
 pip install kivy tensorflow pillow numpy
+```
 
-🧠 4. Treinamento do Modelo
-Se você ainda não tiver o arquivo mnist_model.h5, execute o script de treinamento:
-
-bash
-Copiar código
+## 🧠 4. Treinamento do Modelo
+Se o arquivo `mnist_model.h5` ainda não existir, execute:
+```bash
 python train_and_save_model.py
-Isso vai:
-Treinar um modelo simples com o dataset MNIST.
-Salvar o modelo em: model/mnist_model.h5.
+```
+Isso irá:
+- Treinar um modelo baseado no dataset MNIST.
+- Salvar o modelo em `model/mnist_model.h5`.
 
-▶️ 5. Execução do Aplicativo
-Após garantir que o modelo está disponível, execute o aplicativo com:
-
-bash
-Copiar código
+## ▶️ 5. Execução do Aplicativo
+Após garantir que o modelo está disponível, execute:
+```bash
 python main.py
-Se tudo estiver correto, uma interface gráfica abrirá para interação.
+```
+Se tudo estiver correto, uma interface gráfica será aberta para interação.
 
-🖥️ 6. Como Usar
-Abra o aplicativo.
-Desenhe um número (0-9) na área branca.
-Clique no botão "Classificar".
-O número desenhado será reconhecido e exibido na tela com a confiança da predição.
-Clique em "Limpar" para desenhar novamente.
+## 🖥️ 6. Como Usar
+1. Abra o aplicativo.
+2. Desenhe um número (0-9) na área branca.
+3. Clique no botão **"Classificar"**.
+4. O número desenhado será reconhecido e exibido com a confiança da predição.
+5. Clique em **"Limpar"** para desenhar novamente.
 
-🛡️ 7. Possíveis Erros e Soluções
+## 🛡️ 7. Possíveis Erros e Soluções
 
-❗ Erro: Arquivo mnist_model.h5 não encontrado
-Causa: O modelo não foi treinado ou não está na pasta correta.
-Solução: Execute:
-bash
-Copiar código
+### ❗ Erro: Arquivo `mnist_model.h5` não encontrado
+**Causa:** O modelo não foi treinado ou está no local errado.  
+**Solução:** Execute:
+```bash
 python train_and_save_model.py
-❗ Erro: Módulo kivy ou tensorflow não encontrado
-Causa: As bibliotecas não foram instaladas corretamente.
-Solução: Execute:
-bash
-Copiar código
+```
+
+### ❗ Erro: Módulo `kivy` ou `tensorflow` não encontrado
+**Causa:** As bibliotecas não foram instaladas corretamente.  
+**Solução:** Execute:
+```bash
 pip install kivy tensorflow pillow numpy
-❗ Erro: Permissão negada ao acessar mnist_model.h5
-Causa: Permissões incorretas no arquivo.
-Solução:
-Clique com o botão direito no arquivo mnist_model.h5.
-Vá para Propriedades > Segurança.
-Certifique-se de que seu usuário tem Leitura e Execução.
+```
 
-💡 8. Melhorias Futuras
-Adicionar suporte para mais tipos de imagens.
-Melhorar a interface gráfica.
-Permitir salvar os resultados em um arquivo de texto.
+### ❗ Erro: Permissão negada ao acessar `mnist_model.h5`
+**Causa:** Permissões incorretas no arquivo.  
+**Solução:**
+- Clique com o botão direito no arquivo `mnist_model.h5`.
+- Vá para **Propriedades > Segurança**.
+- Certifique-se de que seu usuário tem **Leitura e Execução**.
 
-🤝 9. Contribuição
-Sinta-se à vontade para contribuir com melhorias, correções ou novas funcionalidades! Basta abrir uma Pull Request.
+## 💡 8. Melhorias Futuras
+- [ ] Adicionar suporte para mais tipos de imagens.
+- [ ] Melhorar a interface gráfica.
+- [ ] Permitir salvar os resultados em um arquivo de texto.
 
-📄 10. Licença
-Este projeto é licenciado sob a MIT License.
+## 🤝 9. Contribuição
+Sinta-se à vontade para contribuir com melhorias, correções ou novas funcionalidades! Basta abrir uma **Pull Request**.
 
-Feito com ❤️ por Renato Samico
+## 📄 10. Licença
+Este projeto é licenciado sob a **MIT License**.
+
+---
+
+Feito com ❤️ por **Renato Samico**
 Se precisar de ajuda, entre em contato! 🚀
+
