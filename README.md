@@ -128,6 +128,6 @@ Este projeto é licenciado sob a **MIT License**.
 
 ---
 
-Feito com ❤️ por **Renato Samico**
+Feito com ❤️ por **DSNato**
 Se precisar de ajuda, entre em contato! 🚀
 
